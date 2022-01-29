@@ -1,0 +1,54 @@
+﻿@model Deneme4.Models.Computer
+@{
+    ViewData["Title"] = "CpRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<h1>Computer Register Add Page</h1>
+</br>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Click For Register
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("CpRegister", "Computer", FormMethod.Post))
+                {
+
+                    @Html.LabelFor(x => x.Graphicscard)
+                    @Html.TextBoxFor(x => x.Graphicscard, new { @class = "form-control" })
+                    @Html.LabelFor(x => x.Mainboard)
+                    @Html.TextBoxFor(x => x.Mainboard, new { @class = "form-control" })
+                    @Html.LabelFor(x => x.Ram)
+                    @Html.TextBoxFor(x => x.Ram, new { @class = "form-control" })
+                    @Html.LabelFor(x => x.Monitor)
+                    @Html.TextBoxFor(x => x.Monitor, new { @class = "form-control" })
+                    <button class="btn btn-info">Register</button>
+
+                }
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

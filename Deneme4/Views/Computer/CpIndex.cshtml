@@ -1,0 +1,35 @@
+﻿@using Deneme4.Models
+@model List<Computer>
+
+@{
+    ViewData["Title"] = "CpIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CpIndex</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Pcid</th>
+        <th>Graphicscard</th>
+        <th>Mainboard</th>
+        <th>Ram</th>
+        <th>Monitor</th>
+    </tr>
+    @foreach (var x in ViewBag.Model)
+   {
+        <tr>
+           <td>@x.Pcid</td>
+            <td>@x.Graphicscard</td>
+            <td>@x.Mainboard</td>
+            <td>@x.Ram</td>
+            <td>@x.Monitor</td>
+            <td><a href="/Computer/CpDelete/@x.Pcid" class="btn btn-danger">Delete</a>
+            <td><a href="#" class="btn btn-success">Update</a>
+
+        </tr>
+    }
+</table>
+<a href="/Computer/CpRegister" class="btn btn-primary">Register</a>
+
+    

@@ -1,0 +1,21 @@
+﻿@model Deneme4.Models.Student
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Update</h1>
+
+@using (Html.BeginForm("Update", "Student", FormMethod.Post))
+{
+@Html.LabelFor(x => x.name)
+ @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+  @Html.LabelFor(x => x.surname)
+  @Html.TextBoxFor(x => x.surname, new { @class = "form-control" })
+   @Html.LabelFor(x => x.email)
+   @Html.TextBoxFor(x => x.email, new { @class = "form-control" })
+     @Html.LabelFor(x => x.telefon)
+  @Html.TextBoxFor(x => x.telefon, new { @class = "form-control" })
+    <button class="btn btn-info">Update</button>
+    }
+

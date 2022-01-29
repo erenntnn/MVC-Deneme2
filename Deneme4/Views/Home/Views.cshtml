@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>View</h1>
+
+<form method="post">
+    <table>
+        <tr>
+            <td>No1</td>
+            <td><input type="text" value="@ViewBag.no1" name="n1" \ /></td>
+        </tr>
+        <tr>
+            <td>No2</td>
+            <td><input type="text" value="@ViewBag.no2" name="n2" \ /></td>
+        </tr>
+        <tr>
+            <td>No3</td>
+            <td><input type="text" value="@ViewBag.no3" name="n3" \ /></td>
+        </tr>
+        <tr>
+            <td>No4</td>
+            <td><input type="text" value="@ViewBag.no1" name="n4" \ /></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit"\ /></td>
+
+            
+        </tr>
+        <tr>
+            <td>Result</td>
+            <td><input type="text"value="@ViewBag.result"\ /></td>
+        </tr>
+    </table>
+</form>

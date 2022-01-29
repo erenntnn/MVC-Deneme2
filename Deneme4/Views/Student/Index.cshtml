@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<h2>Kayit Listesi</h2>
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Graphicscard</th>
+        <th>Mainboard</th>
+        <th>Ram</th>
+        <th>Monitor</th>
+     
+
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+    <td>@x.id</td>
+    <td>@x.name</td>
+    <td>@x.surname</td>
+    <td>@x.email</td>
+    <td>@x.telefon</td>
+    <td>@x.STGraphicscard</td>
+    <td>@x.STMainboard</td>
+    <td>@x.STMonitor</td>
+    <td>@x.STRam</td>
+
+    <td></td>
+    <td><a href="/Student/Delete/@x.id" class="btn btn-danger">Delete</a>
+    <td><a href="/Student/Update/@x.id" class="btn btn-success">Update</a>
+
+</tr>   
+    }
+</table>
+<a href="/Student/Register"class="btn btn-primary">New</a>

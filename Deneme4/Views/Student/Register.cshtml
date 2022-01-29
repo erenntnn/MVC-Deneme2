@@ -1,0 +1,115 @@
+﻿@model Deneme4.Models.Student
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<h1>Register Add Page</h1>
+</br>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Click For Register
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Register", "Student", FormMethod.Post))
+                {
+                    @Html.LabelFor(x => x.name)
+                    @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+                    @Html.LabelFor(x => x.surname)
+                    @Html.TextBoxFor(x => x.surname, new { @class = "form-control" })
+                    @Html.LabelFor(x => x.email)
+                    @Html.TextBoxFor(x => x.email, new { @class = "form-control" })
+                    @Html.LabelFor(x => x.telefon)
+                    @Html.TextBoxFor(x => x.telefon, new { @class = "form-control" })
+
+
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        @{
+                            for (int i = 0; i < ViewBag.STRam.Count; i++)
+                            {
+                                <option value="@ViewBag.STRam[i]">@ViewBag.STRam[i]</option>
+                            }
+
+
+                        }
+
+
+                    </select>
+
+
+                    <select class="form-select" aria-label="Default selects example">
+                        <option selected>Open this selects menu</option>
+                        @{
+                            for (int j = 0; j < ViewBag.STGraphicscard.Count; j++)
+                            {
+                                <option value="@ViewBag.STGraphicscard[j]">@ViewBag.STGraphicscard[j]</option>
+                            }
+
+
+                        }
+
+
+
+                    </select>
+
+                    <select class="form-select" aria-label="Default selects example">
+                        <option selected>Open this selects menu</option>
+                        @{
+                            for (int k = 0; k < ViewBag.STMainboard.Count; k++)
+                            {
+                                <option value="@ViewBag.STMainboard[k]">@ViewBag.STMainboard[k]</option>
+                            }
+
+
+                        }
+
+
+
+                    </select>
+
+                    <select class="form-select" aria-label="Default selects example">
+                        <option selected>Open this selects menu</option>
+                        @{
+                            for (int k = 0; k < ViewBag.STMonitor.Count; k++)
+                            {
+                                <option value="@ViewBag.STMonitor[k]">@ViewBag.STMonitor[k]</option>
+                            }
+
+
+                        }
+
+
+
+                    </select>
+                }
+
+                <button class="btn btn-info">Register</button>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+    </div>
+</div>
+
+//IFormCollection
